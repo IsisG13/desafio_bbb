@@ -7,8 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,4 +25,9 @@ public class Candidato {
 
     @OneToMany(mappedBy = "candidato")
     private List<Voto> votos;
+
+    public Candidato(Long id) {
+        this.id = id;
+    }
+
 }
